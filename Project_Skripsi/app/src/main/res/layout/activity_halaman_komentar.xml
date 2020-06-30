@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".HalamanKomentar">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbIndex"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Forum"
+        ></androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardElevation="5dp"
+            android:id="@+id/cvKeterangan"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="@color/cardview_light_background"
+            android:layout_margin="7dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginBottom="2dp"
+                    app:cardElevation="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Informasi Kegiatan Majelis"
+                        android:layout_gravity="center"
+                        android:textStyle="bold"
+                        android:textColor="@color/cardview_dark_background"/>
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:paddingLeft="13dp"
+                    android:textColor="@color/colorPrimary"
+                    android:id="@+id/majelis"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:paddingLeft="13dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/quantum_brown600"
+                    android:id="@+id/tgl"/>
+
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/selesai"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="10dp"
+                    android:padding="2dp"
+                    android:background="@drawable/bttnnyabu"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorThird"
+                        android:textStyle="bold"
+                        android:text="Sudah Berlangsung"
+                        android:textSize="11dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="-3dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:drawableStart="@drawable/ic_check_circle"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="125dp"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal"
+                    android:id="@+id/belum"
+                    android:layout_marginLeft="15dp"
+                    android:padding="2dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/btnsecondary">
+                    <TextView
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:text="Belum Berlangsung"
+                        android:textSize="11dp"
+                        android:layout_marginLeft="3dp"
+                        android:layout_marginTop="-3dp"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:drawableStart="@drawable/ic_report_black_24dp"/>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rKomentar"
+            android:layout_above="@id/etKomentar"
+            android:layout_below="@id/cvKeterangan"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tidak ada komentar"
+                    android:textColor="@color/cardview_dark_background"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:id="@+id/tvData"
+                   />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    />
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:id="@+id/etKomentar"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="3dp"
+            android:layout_marginLeft="4dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/idnya"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_komen"
+                android:visibility="gone"
+                android:id="@+id/logindulu"
+                android:padding="5dp"
+                android:weightSum="11"
+                >
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="Harap Login untuk berkomentar"/>
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:drawableStart="@drawable/ic_exit_to_app_black_24dp"
+                    android:id="@+id/btnMasuk"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal"
+                android:layout_margin="5dp"
+                android:background="@drawable/bg_komen"
+                android:layout_marginLeft="10dp"
+                android:weightSum="11"
+                android:id="@+id/lKomentar"
+                >
+
+
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="10"
+                    android:hint="Pesan.."
+                    android:background="@drawable/bg_pesan"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginLeft="15dp"
+
+                    android:id="@+id/etPesan"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingVertical="10dp"
+                    android:layout_gravity="end"
+                    android:drawableStart="@drawable/ic_send_black_24dp"
+                    android:visibility="gone"
+                    android:id="@+id/btnSend"/>
+
+
+
+            </LinearLayout>
+
+            </LinearLayout>
+
+    </RelativeLayout>
+</LinearLayout>

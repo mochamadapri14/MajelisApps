@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PostJadwal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tbIndex"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Buat Jadwal"
+        >
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="10dp"
+                android:layout_gravity="right"
+                android:id="@+id/btnSave"
+                android:src="@drawable/ic_check_black_24dp"/>
+
+
+    </androidx.appcompat.widget.Toolbar>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="-3dp"
+            app:cardElevation="4dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buat Informasi Kegiatan"
+                android:layout_gravity="center"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"/>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            app:cardElevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <Button
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:drawableStart="@drawable/ic_image_black_24dp"
+                        android:text="Ambil Foto"
+                        android:textColor="@color/cardview_light_background"
+                        android:background="@drawable/buttonnya"
+                        android:id="@+id/btnAmbil"/>
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="220dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/cdImage"
+                    android:background="@drawable/btnsecondary"
+                    android:visibility="gone"
+                    app:cardElevation="4dp">
+                    <com.zolad.zoominimageview.ZoomInImageView
+                        android:layout_width="210dp"
+                        android:layout_height="140dp"
+                        android:layout_gravity="center"
+                        android:id="@+id/imgView"/>
+                </androidx.cardview.widget.CardView>
+
+
+                <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/etId"/>
+      <com.google.android.material.textfield.TextInputLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5dp">
+          <EditText
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:hint="Nama Majelis"
+              android:inputType="text"
+              android:imeOptions="actionNext"
+              android:id="@+id/etNamaMajelis"/>
+      </com.google.android.material.textfield.TextInputLayout>
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp">
+                <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="31dp"
+                    android:drawableStart="@drawable/tanggal"
+                    android:id="@+id/btnTanggal"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:hint="Klik Tanggal (yyyy/MM/dd)"
+                    android:inputType="text"
+                    android:imeOptions="actionNext"
+                    android:textColor="@color/cardview_dark_background"
+                    android:id="@+id/etTanggal"/>
+            </LinearLayout>
+
+       </com.google.android.material.textfield.TextInputLayout>
+       <com.google.android.material.textfield.TextInputLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_marginTop="10dp">
+        <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="24dp"
+                        android:layout_height="31dp"
+                        android:drawableStart="@drawable/time"
+                        android:id="@+id/btnJam"/>
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Klik Jam Mulai"
+                        android:inputType="text"
+                        android:imeOptions="actionNext"
+                        android:textColor="@color/cardview_dark_background"
+                        android:layout_marginTop="3dp"
+                        android:id="@+id/etJam"/>
+                </LinearLayout>
+
+       </com.google.android.material.textfield.TextInputLayout>
+
+             <com.google.android.material.textfield.TextInputLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="24dp"
+                android:layout_height="31dp"
+                android:drawableStart="@drawable/location"
+                android:textColor="@color/cardview_light_background"
+                android:id="@+id/btnLocation"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Klik Lokasi"
+                android:layout_marginTop="5dp"
+                android:inputType="text"
+                android:imeOptions="actionNext"
+                android:textColor="@color/cardview_dark_background"
+                android:id="@+id/etLokasi"/>
+
+        </LinearLayout>
+
+             </com.google.android.material.textfield.TextInputLayout>
+         <com.google.android.material.textfield.TextInputLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="10dp">
+             <EditText
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:hint="Keterangan"
+                 android:inputType="text"
+                 android:imeOptions="actionDone"
+                 android:id="@+id/etKeterangan"/>
+         </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/etLatitude"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/etLongitude"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/etLengkap"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:id="@+id/etKota"/>
+
+
+</LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

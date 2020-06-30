@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+
+        android:title="Masuk"
+        android:id="@+id/masuk"
+        />
+    <item
+        android:title="Profil Anda"
+        android:id="@+id/profil"/>
+    <item
+        android:title="Riwayat Pesan"
+        android:id="@+id/riwayat"/>
+    <item
+        android:title="Keluar"
+        android:id="@+id/keluar"/>
+    <item android:id="@+id/cari"
+        android:title="cari"
+        android:icon="@drawable/ic_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+
+</menu>
